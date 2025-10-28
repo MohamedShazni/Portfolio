@@ -30,19 +30,19 @@ interface Project {
   link?: string; // Optional link for the project
 }
 
-interface Experience {
-  role: string;
-  company: string;
-  period: string;
-  description: string;
-  color: string;
-}
+// interface Experience {
+//   role: string;
+//   company: string;
+//   period: string;
+//   description: string;
+//   color: string;
+// }
 
 interface VisibilityState {
   [key: string]: boolean;
 }
 
-const Portfolio: React.FC = () => {
+const Portfolio = () => {
   const [activeSection, setActiveSection] = useState<string>("home");
   const [isVisible, setIsVisible] = useState<VisibilityState>({});
 
@@ -79,6 +79,7 @@ const Portfolio: React.FC = () => {
     { name: "Python", level: 75, color: "from-indigo-500 to-purple-500" },
     { name: "MySQL", level: 85, color: "from-pink-500 to-rose-500" },
     { name: "PHP", level: 90, color: "from-green-500 to-emerald-500" },
+    { name: "React Native", level: 65, color: "from-teal-500 to-cyan-500" },
   ];
 
   const projects: Project[] = [
@@ -94,16 +95,10 @@ const Portfolio: React.FC = () => {
       title: "S7 Futsal Booking System",
       description:
         "Real-time booking system for futsal courts with React and Tailwind CSS",
-      tags: ["React", "Tailwind CSS"],
+      tags: ["React", "Tailwind CSS", "shadCN UI"],
       gradient: "from-blue-600 via-cyan-600 to-teal-500",
       icon: <Footprints className="w-8 h-8" />,
-    },
-    {
-      title: "E-Commerce Platform",
-      description: "Full-stack e-commerce platform with Next.Js, and MongoDB",
-      tags: ["Next.Js", "Tailwind CSS"],
-      gradient: "from-purple-600 via-pink-600 to-red-500",
-      icon: <BaggageClaim className="w-8 h-8" />,
+      link: "https://futsal-booking-shazni-07.vercel.app/",
     },
     {
       title: "Movie Explorer App",
@@ -114,18 +109,25 @@ const Portfolio: React.FC = () => {
       icon: <MoveIcon className="w-8 h-8" />,
       link: "https://my-movie-explorer.vercel.app/",
     },
-  ];
-
-  const experiences: Experience[] = [
     {
-      role: "Pharmacy Assistant",
-      company: "Zaidah Pharmacy.",
-      period: "2023 - Present",
-      description:
-        "Supports pharmacists in dispensing medications, managing inventory, and providing customer service",
-      color: "from-emerald-500 to-teal-500",
+      title: "E-Commerce Platform",
+      description: "Full-stack e-commerce platform with Next.Js, and MongoDB",
+      tags: ["Next.Js", "Tailwind CSS"],
+      gradient: "from-purple-600 via-pink-600 to-red-500",
+      icon: <BaggageClaim className="w-8 h-8" />,
     },
   ];
+
+  // const experiences: Experience[] = [
+  //   {
+  //     role: "Pharmacy Assistant",
+  //     company: "Zaidah Pharmacy.",
+  //     period: "2023 - Present",
+  //     description:
+  //       "Supports pharmacists in dispensing medications, managing inventory, and providing customer service",
+  //     color: "from-emerald-500 to-teal-500",
+  //   },
+  // ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-x-hidden">
@@ -136,7 +138,7 @@ const Portfolio: React.FC = () => {
             <div className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
               Portfolio.
             </div>
-            <div className="hidden md:flex space-x-8">
+            <div className="hidden md:flex space-x-8 ">
               {[
                 "home",
                 "about",
@@ -163,7 +165,7 @@ const Portfolio: React.FC = () => {
       {/* Hero Section */}
       <section
         id="home"
-        className="min-h-screen flex items-center justify-center relative overflow-hidden mt-12"
+        className="min-h-screen flex items-center justify-center relative overflow-hidden"
       >
         <div className="absolute inset-0">
           <div className="absolute top-20 left-20 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
@@ -194,12 +196,12 @@ const Portfolio: React.FC = () => {
 
           <h1 className="text-6xl md:text-8xl font-bold mb-6">
             <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Shazni Mohamed
+              Mohamed Shazni
             </span>
           </h1>
 
           <p className="text-2xl md:text-3xl mb-8 text-gray-300">
-            Intern Software Engineer | ML Enthusiast
+            Intern Software Engineer | JavaScript Enthusiast
           </p>
 
           <p className="text-lg md:text-xl mb-12 text-gray-400 max-w-2xl mx-auto">
@@ -221,17 +223,16 @@ const Portfolio: React.FC = () => {
             >
               Get In Touch
             </button>
-          </div>
-
-          <div className="mt-12">
-            <a
-              href="/Shazni_Software Engineer_Intern_CV.pdf"
-              download
-              className="inline-flex items-center px-6 py-6 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full text-white font-semibold hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 hover:scale-105"
-            >
-              Download My Resume
-              <Download className="ml-2 w-5 h-5" />
-            </a>
+            <button>
+              <a
+                href="/Mohamed_Shazni_CV.pdf"
+                download
+                className="inline-flex items-center px-6 py-6 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full text-white font-semibold hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 hover:scale-105"
+              >
+                Download My Resume
+                <Download className="ml-2 w-5 h-5" />
+              </a>
+            </button>
           </div>
         </div>
       </section>
@@ -403,7 +404,7 @@ const Portfolio: React.FC = () => {
         </div>
       </section>
 
-      {/* Experience Section */}
+      {/* Experience Section
       <section id="experience" className="py-20 px-6 bg-black/20">
         <div className="container mx-auto max-w-4xl">
           <div
@@ -449,7 +450,7 @@ const Portfolio: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Contact Section */}
       <section id="contact" className="py-20 px-6">
@@ -496,7 +497,7 @@ const Portfolio: React.FC = () => {
                 <Github className="w-6 h-6 text-gray-400 group-hover:text-cyan-400 transition-colors duration-300" />
               </a>
               <a
-                href="https://www.linkedin.com/in/mohamed-shazni-3101772bb/"
+                href="https://www.linkedin.com/in/mohamed-shazni/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-4 bg-gradient-to-br from-gray-800 to-gray-900 rounded-full border border-gray-700 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-400/25 transition-all duration-300 hover:scale-110 group"
