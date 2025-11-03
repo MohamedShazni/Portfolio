@@ -86,8 +86,8 @@ const Portfolio = () => {
     {
       title: "VITISCO Learning Platform",
       description:
-        "Full-stack learning platform for deaf individuals with React, Node.js, and MySQL",
-      tags: ["React", "Node.js", "MySQL"],
+        "Full-stack learning platform for deaf individuals with React Native, Node.js, and MySQL",
+      tags: ["React Native", "Node.js", "MySQL"],
       gradient: "from-purple-600 via-pink-600 to-red-500",
       icon: <Code className="w-8 h-8" />,
     },
@@ -110,9 +110,10 @@ const Portfolio = () => {
       link: "https://my-movie-explorer.vercel.app/",
     },
     {
-      title: "E-Commerce Platform",
-      description: "Full-stack e-commerce platform with Next.Js, and MongoDB",
-      tags: ["Next.Js", "Tailwind CSS"],
+      title: "WeatherNow",
+      description:
+        "A sleek weather application providing real-time forecasts using React and OpenWeatherMap API",
+      tags: ["React", "Tailwind CSS"],
       gradient: "from-purple-600 via-pink-600 to-red-500",
       icon: <BaggageClaim className="w-8 h-8" />,
     },
